@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
 <%_ if(options.vuex){ _%>
 import store from './store'
 <%_ } _%>

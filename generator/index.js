@@ -11,5 +11,8 @@ module.exports = (api, options, rootOptions) => {
   if (options.vuex) {
     require('./vuex')(api, options)
   }
+  if (options.vw) {
+    require('./vw')(api, options)
+  }
   api.render('./template');
 }
