@@ -4,7 +4,7 @@ module.exports = (api, options, rootOptions) => {
   // 修改 package.json
   // 安装一些基础库
   api.extendPackage({
-    dependcies: {
+    dependencies: {
       "axios": "^0.18.0"
     }
   })

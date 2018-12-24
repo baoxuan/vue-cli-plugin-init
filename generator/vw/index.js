@@ -4,7 +4,7 @@ module.exports = (api, options, rootOptions) => {
   // 安装一些基础库
   // api.extendPackage:  负责给初始化项目中的package.json 添加依赖并安装
   api.extendPackage({
-    devDependencies: {
+    dependencies: {
       "cssnano": "^4.1.4",
       "cssnano-preset-advanced": "^4.0.2",
       "postcss-aspect-ratio-mini": "0.0.2",
