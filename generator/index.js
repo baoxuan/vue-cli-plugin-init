@@ -12,16 +12,9 @@ module.exports = (api, options, rootOptions) => {
   if (options.vw) {
     require('./vw')(api, options)
   }
+  if (options.reset) {
+    require('./reset')(api, options)
+  }
   api.render('./template')
-  //负责具体处理模板项目中的文件
-  api.postProcessFIles(files => {
-    const main = files['src/main.js']
-    if(main){
-      const lines = main.split(/\r?\n/g).reverse()
-      const lastImportIndex = lines.findIndex(line => line.match(/^import/))
 
-      lines[lastImportIndex] += `\nimport './reset.css'`
-      main = lines.reverse().join('\n')
-    }
-  })
 }

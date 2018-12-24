@@ -1,4 +1,4 @@
-module.export = (api, projectOptions) => {
+module.exports = (api, projectOptions) => {
   api.chainWebpack(webpackConfig => {
     // 通过webpack-chain 修改webpack配置
   })
