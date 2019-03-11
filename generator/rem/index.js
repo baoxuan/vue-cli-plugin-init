@@ -5,7 +5,7 @@ module.exports = (api, options, rootOptions) => {
   // api.extendPackage:  负责给初始化项目中的package.json 添加依赖并安装
   api.extendPackage({
     dependencies: {
-      "postcss-px2rem": "^0.0.3",
+      "postcss-px2rem": "^0.3.0",
     },
     postcss: {
       plugins: {

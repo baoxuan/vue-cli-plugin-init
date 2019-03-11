@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-init",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "vue",
   "main": "index.js",
   "scripts": {
