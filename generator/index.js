@@ -9,10 +9,14 @@ module.exports = (api, options, rootOptions) => {
       "normalize.css": "^8.0.1"
     }
   })
+  if (options.rem) {
+    require('./rem')(api, options)
+  }
 
   if (options.vw) {
     require('./vw')(api, options)
   }
+
   api.render('./template')
   api.postProcessFiles(files => {
     let main = files['src/main.js']
