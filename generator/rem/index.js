@@ -15,11 +15,6 @@ module.exports = (api, options, rootOptions) => {
       }
     }
   })
-
-  api.extendPackage({
-    dependencies: {
-      'amfe-flexible': '^2.2.1'
-    }
-  })
-  api.injectImports(api.entryFile, `import 'amfe-flexible'`)
+  api.render('./template')
+  // api.injectImports(api.entryFile, `import 'amfe-flexible'`)
 }

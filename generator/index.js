@@ -5,29 +5,19 @@ module.exports = (api, options, rootOptions) => {
   // 安装一些基础库
   api.extendPackage({
     dependencies: {
-      "axios": "^0.18.0",
-      "normalize.css": "^8.0.1"
+      "axios": "^0.18.0"
     }
   })
-  if (options.rem) {
+  if (options.layoutType === 'rem') {
+    console.log('rem')
     require('./rem')(api, options)
   }
-
-  if (options.vw) {
+  if (options.layoutType === 'vw') {
+    console.log('vw')
     require('./vw')(api, options)
   }
-
+  // 复制并用 ejs 渲染 `./template` 内所有的文件
   api.render('./template')
-  api.postProcessFiles(files => {
-    let main = files['src/main.js']
-    if (main) {
-      const lines = main.split(/\r?\n/g).reverse()
-      const lastImportIndex = lines.findIndex(line => line.match(/^import/))
-
-      lines[lastImportIndex] += `\nimport 'normalize.css'`
-      main = lines.reverse().join('\n')
-      files['src/main.js'] = main
-    }
-  })
+  api.injectImports(api.entryFile, `import './reset.css'`)
 
 }

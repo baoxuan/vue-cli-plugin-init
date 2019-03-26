@@ -8,19 +8,15 @@
   <meta name="format-detection" content="telephone=no, email=no" />
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
   <link rel="icon" href="<%%= BASE_URL %%>favicon.ico">
-  <title>
-    <%= rootOptions.projectName %>
-  </title>
+  <title></title>
+  <script>
+    function setRem(pageSize) {
+      var wWidth = window.innerWidth || document.body.clientWidth || document.documentElement.clientWidth;
+      document.getElementsByTagName('html')[0].style.fontSize = wWidth / pageSize * 100 + 'px';
+    }
+    setRem(750)
+  </script>
 </head>
 
-<body>
-  <noscript>
-    <strong>We're sorry but
-      <%= rootOptions.projectName %> doesn't work properly without JavaScript enabled. Please enable it to
-      continue.</strong>
-  </noscript>
-  <div id="app"></div>
-  <!-- built files will be auto injected -->
-</body>
 
 </html>
