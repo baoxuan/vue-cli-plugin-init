@@ -40,5 +40,5 @@ module.exports = (api, options, rootOptions) => {
   })
   // api.render: 负责将模板项目中提取定义好的目录和文件拷贝到初始化项目中
   // 传地址字符串时，render函数会将你所传目录内的所有文件覆盖初始化项目中的src目录下的文件
-  api.render('./template');
+  // api.render('./template');
 }
